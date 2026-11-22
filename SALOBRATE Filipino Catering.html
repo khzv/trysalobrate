@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SALOBRATE | Filipino Catering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gilda+Display&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#7F9BC0;--yellow:#FEE1A1;--peach:#FDAF97;--mauve:#A96469;
+--bg:#FFF6E3;--card:#FFFFFF;--ink:#3B2A2D;--soft:#6d5659;--line:#ecd9b6;--btn:#A96469;--btntxt:#fff;--band:#FEE1A1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2B2226;--card:#392d32;--ink:#F8ECE4;--soft:#cdb6b3;--line:#52424a;--btn:#FDAF97;--btntxt:#3B2A2D;--band:#46363d}}
+:root[data-theme="dark"]{--bg:#2B2226;--card:#392d32;--ink:#F8ECE4;--soft:#cdb6b3;--line:#52424a;--btn:#FDAF97;--btntxt:#3B2A2D;--band:#46363d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Gilda Display',Georgia,serif;font-size:1.05rem;line-height:1.65}
+h1,h2,h3,.nav a,.btn,label,summary,.price{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:500}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em}
+h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:2px solid var(--peach);padding-top:env(safe-area-inset-top,0px)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:1rem;padding:.6rem 1.2rem;flex-wrap:wrap}
+.logo{font-size:2.3rem;text-decoration:none;color:var(--mauve);line-height:1;margin-right:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo{color:var(--peach)}}
+.nav{display:flex;gap:.2rem;flex-wrap:wrap}
+.nav a{text-decoration:none;padding:.35rem .7rem;border-radius:99px;font-size:1rem;transition:background .2s}
+.nav a:hover{background:var(--yellow);color:#3B2A2D}
+.nav a.on{background:var(--blue);color:#1d2a3a}
+.btn{display:inline-block;background:var(--btn);color:var(--btntxt);border:0;border-radius:99px;padding:.65rem 1.5rem;font-size:1.05rem;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--blue)}
+.btn.alt{background:var(--yellow);color:#3B2A2D}
+main{max-width:1100px;margin:auto;padding:0 1.2rem}
+.page{display:none;padding:2.5rem 0 3rem}.page.show{display:block}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;min-height:62vh}
+.hero h1{font-size:clamp(4rem,14vw,8rem);color:var(--mauve);margin:0;font-family:'Great Vibes',cursive;font-weight:400;line-height:.95}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1{color:var(--peach)}}
+.hero p{font-size:1.25rem;max-width:30ch}
+.plate{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--yellow) 0 38%,var(--peach) 38% 62%,var(--blue) 62%);display:grid;place-items:center;font-size:clamp(4rem,13vw,7rem);box-shadow:0 0 0 10px var(--card),0 0 0 12px var(--peach);max-width:420px;width:100%;justify-self:center}
+.band{background:var(--band);margin:2.5rem -1.2rem;padding:2rem 1.2rem;border-radius:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.2rem}
+.card .pic{aspect-ratio:4/3;border-radius:16px;display:grid;place-items:center;font-size:3.6rem;margin-bottom:.8rem;background:var(--c,var(--peach))}
+.card h3{font-size:1.25rem;margin-bottom:.2rem}
+.price{color:var(--mauve);font-size:1.2rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .price{color:var(--peach)}}
+.card p{margin:.2rem 0 .6rem;color:var(--soft)}
+.stars{color:#c98a1a;letter-spacing:2px}
+.pkg{display:flex;flex-direction:column}.pkg ul{padding-left:1.1rem;margin:.5rem 0 1.2rem;flex:1}
+.pkg.best{border:3px solid var(--mauve)}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.tabs button{font-family:'Oswald',sans-serif;border:2px solid var(--blue);background:none;color:var(--ink);border-radius:99px;padding:.35rem 1rem;cursor:pointer;font-size:1rem}
+.tabs button.on{background:var(--blue);color:#1d2a3a}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:.8rem 1.1rem;margin-bottom:.6rem}
+summary{cursor:pointer}details p{margin:.5rem 0 0;color:var(--soft)}
+.builder{display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;align-items:start}
+.scroll{max-height:70vh;overflow:auto;padding-right:.6rem}
+fieldset{border:1px solid var(--line);border-radius:18px;margin:0 0 1rem;padding:1rem;background:var(--card)}
+legend{font-family:'Oswald',sans-serif;font-size:1.15rem;padding:0 .4rem;color:var(--mauve)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) legend{color:var(--peach)}}
+label{display:block;margin:.4rem 0 .15rem;font-size:1rem}
+.opt{display:flex;gap:.5rem;align-items:center;font-family:'Gilda Display',serif;font-weight:400;margin:.3rem 0}
+input,select,textarea{width:100%;font:inherit;padding:.55rem .7rem;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+input[type=checkbox],input[type=radio]{width:auto;accent-color:var(--mauve)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.sum{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));background:var(--yellow);color:#3B2A2D;border-radius:24px;padding:1.4rem}
+.sum li{display:flex;justify-content:space-between;gap:1rem;list-style:none}.sum ul{padding:0;margin:.6rem 0}
+.total{font-family:'Oswald',sans-serif;font-size:2rem;color:#7a3a40}
+.note{font-size:.9rem;color:var(--soft)}.sum .note{color:#5a4346}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:start}
+.ok{display:none;background:var(--blue);color:#1d2a3a;border-radius:16px;padding:1rem;margin-top:1rem}
+footer{background:var(--mauve);color:#fff;text-align:center;padding:2rem 1.2rem calc(2rem + env(safe-area-inset-bottom,0px));margin-top:2rem}
+footer .script{font-size:2.4rem;color:var(--yellow)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:760px){.hero,.builder,.two{grid-template-columns:1fr}.sum{position:static}.scroll{max-height:none}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo script" href="#home">Salobrate</a>
+<nav class="nav" aria-label="Main">
+<a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#packages">Catering Packages</a><a href="#customize">Customize Your Event</a><a href="#booking">Contact</a>
+</nav>
+<a class="btn" href="#booking">Book Now</a>
+</div></header>
+
+<main>
+<!-- HOME -->
+<section class="page" id="home">
+<div class="hero">
+<div>
+<h1>Salobrate</h1>
+<p>Filipino food for every celebration, cooked fresh and served with warmth.</p>
+<a class="btn" href="#booking">Book Now</a> <a class="btn alt" href="#customize">Build your event</a>
+</div>
+<div class="plate" aria-hidden="true">🍛</div>
+</div>
+<div class="band"><h2>What we cook by</h2>
+<div class="grid">
+<div class="card"><h3>Home-style recipes</h3><p>Slow-cooked dishes from family kitchens, never shortcuts.</p></div>
+<div class="card"><h3>Fresh ingredients</h3><p>Cooked the day of your event and delivered hot.</p></div>
+<div class="card"><h3>Made for gatherings</h3><p>From birthdays to company parties, in any size.</p></div>
+</div></div>
+<h2>Featured dishes</h2>
+<div class="grid" id="featured"></div>
+<h2 style="margin-top:2.5rem">Catering packages</h2>
+<div class="grid" id="homepkgs"></div>
+<p><a class="btn alt" href="#packages">See all inclusions</a></p>
+<h2 style="margin-top:2.5rem">Loved by our customers</h2>
+<div class="grid">
+<div class="card"><div class="stars">★★★★★</div><p>The lechon kawali vanished in ten minutes. Guests kept asking who catered.</p><b>Maria S., debut</b></div>
+<div class="card"><div class="stars">★★★★★</div><p>On time, hot food, and the team cleaned up after. Easy to book.</p><b>Jon D., office party</b></div>
+<div class="card"><div class="stars">★★★★☆</div><p>Kare-kare tasted just like Lola’s. The leche flan was a hit.</p><b>Ana R., reunion</b></div>
+</div>
+<div class="band" style="text-align:center"><h2>Planning a celebration?</h2><p>Tell us the date and number of guests and we’ll reply with a quote.</p><a class="btn" href="#booking">Send an inquiry</a></div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="about">
+<h2>Our story</h2>
+<div class="two">
+<div>
+<p>SALOBRATE comes from <i>salo-salo</i>, the Filipino word for gathering to eat together, and <i>celebrate</i>. We started by cooking for family parties and kept going because people kept asking for seconds.</p>
+<p>Today we cater birthdays, weddings, reunions and office events, serving classic Filipino dishes made with care.</p>
+<h3>Our commitment</h3>
+<p>Quality ingredients, delicious Filipino delicacies, and service that treats your guests like family.</p>
+<a class="btn" href="#menu">See the menu</a>
+</div>
+<div class="plate" aria-hidden="true" style="font-size:5rem">👩‍🍳</div>
+</div>
+<div class="band"><div class="grid">
+<div class="card"><h3>Quality</h3><p>Every tray is tasted before it leaves our kitchen.</p></div>
+<div class="card"><h3>Authenticity</h3><p>Traditional recipes, balanced for modern events.</p></div>
+<div class="card"><h3>Service</h3><p>Clear quotes, on-time delivery, and helpful staff.</p></div>
+</div></div>
+</section>
+
+<!-- MENU -->
+<section class="page" id="menu">
+<h2>Menu</h2>
+<div class="tabs" id="tabs"></div>
+<div class="grid" id="menugrid"></div>
+<p class="note">Prices are per order, good for about 4 to 5 guests. Final prices are confirmed in your quote.</p>
+</section>
+
+<!-- PACKAGES -->
+<section class="page" id="packages">
+<h2>Catering packages</h2>
+<div class="grid" id="pkgs"></div>
+<h2 style="margin-top:2.5rem">Questions about packages and pricing</h2>
+<details><summary>How is the price computed?</summary><p>Each package is priced per guest. Delivery, setup and add-ons are listed separately in your quote.</p></details>
+<details><summary>What is the minimum number of guests?</summary><p>We cater events of 30 guests or more. For smaller gatherings, send us an inquiry.</p></details>
+<details><summary>Can I swap dishes in a package?</summary><p>Yes. Choose a package, then change dishes in Customize Your Event.</p></details>
+<details><summary>How far ahead should I book?</summary><p>Two weeks ahead is best. Weddings and large events should book a month or more ahead.</p></details>
+<details><summary>Do you accommodate dietary needs?</summary><p>Yes. Tell us about allergies or preferences in the event form and we’ll plan around them.</p></details>
+</section>
+
+<!-- CUSTOMIZE -->
+<section class="page" id="customize">
+<h2>Customize your event</h2>
+<div class="builder">
+<div class="scroll">
+<fieldset><legend>Event type</legend>
+<select id="etype"><option>Birthday</option><option>Wedding</option><option>Debut</option><option>Corporate event</option><option>Reunion</option><option>Other</option></select></fieldset>
+<fieldset><legend>Event details</legend>
+<div class="row"><div><label for="guests">Number of guests</label><input id="guests" type="number" min="30" value="50"></div>
+<div><label for="edate">Date</label><input id="edate" type="date"></div></div>
+<label for="venue">Venue or area</label><input id="venue" placeholder="e.g. Quezon City"></fieldset>
+<fieldset><legend>Package</legend>
+<select id="pkg"><option value="0">Build my own menu (₱250 + ₱45 per dish, per guest)</option><option value="350">Simple Salo (₱350 per guest)</option><option value="550">Fiesta (₱550 per guest)</option><option value="850">Grand Celebration (₱850 per guest)</option></select></fieldset>
+<fieldset><legend>Service style</legend>
+<label class="opt"><input type="radio" name="svc" value="0" checked> Buffet (included)</label>
+<label class="opt"><input type="radio" name="svc" value="100"> Plated (+₱100 per guest)</label>
+<label class="opt"><input type="radio" name="svc" value="150"> Boodle fight (+₱150 per guest)</label></fieldset>
+<fieldset><legend>Menu (for build-your-own)</legend><div id="dishes"></div></fieldset>
+<fieldset><legend>Optional add-ons</legend>
+<label class="opt"><input type="checkbox" class="add" value="5000" data-n="Table styling"> Table styling (₱5,000)</label>
+<label class="opt"><input type="checkbox" class="add" value="2500" data-n="Extra servers"> Extra servers (₱2,500)</label>
+<label class="opt"><input type="checkbox" class="add" value="3000" data-n="Sound system"> Sound system (₱3,000)</label>
+<label class="opt"><input type="checkbox" class="add" value="2000" data-n="Dessert station"> Dessert station (₱2,000)</label></fieldset>
+<fieldset><legend>Dietary needs or special requests</legend><textarea id="notes" rows="3" placeholder="Allergies, halal, no pork, anything else"></textarea></fieldset>
+</div>
+<aside class="sum" aria-live="polite">
+<h3>Your event</h3>
+<ul id="lines"></ul>
+<div class="note">Estimated cost</div><div class="total" id="total">₱0</div>
+<p class="note">Estimate only. We’ll confirm the final quote after your inquiry.</p>
+<a class="btn" href="#booking" id="cont">Continue to booking</a>
+</aside>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section class="page" id="booking">
+<h2>Booking and contact</h2>
+<div class="two">
+<form id="form" novalidate>
+<fieldset><legend>Your details</legend>
+<label for="bn">Full name</label><input id="bn" required autocomplete="name">
+<div class="row"><div><label for="be">Email</label><input id="be" type="email" required autocomplete="email"></div>
+<div><label for="bp">Phone</label><input id="bp" type="tel" autocomplete="tel"></div></div></fieldset>
+<fieldset><legend>Event</legend>
+<div class="row"><div><label for="bd">Event date</label><input id="bd" type="date"></div><div><label for="bg">Guests</label><input id="bg" type="number" min="1"></div></div>
+<label for="bs">Your event summary</label><textarea id="bs" rows="5" placeholder="Fill out Customize Your Event to add a summary here, or write your own."></textarea></fieldset>
+<button class="btn" type="submit">Send inquiry</button>
+<div class="ok" id="ok" role="status">Inquiry sent. We’ll reply within 24 hours with your quote.</div>
+</form>
+<div class="card">
+<h3>Find us</h3>
+<p>📍 123 Sampaguita Street, Quezon City, Philippines</p>
+<p>🕘 Mon to Sat, 9:00 AM to 6:00 PM<br>Closed Sundays</p>
+<p>📞 +63 900 000 0000<br>✉️ hello@salobrate.example</p>
+<p>Facebook: @salobrate<br>Instagram: @salobrate.catering</p>
+<p class="note">Sample contact details. Replace them with your real ones.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="script">Salobrate</div><p style="margin:.2rem 0">Filipino catering for every celebration</p><p style="margin:0;font-size:.95rem">hello@salobrate.example · +63 900 000 0000 · Quezon City</p></footer>
+
+<script>
+const peso=n=>'₱'+Math.round(n).toLocaleString('en-PH');
+const dishes=[
+{n:'Chicken Adobo',e:'🍗',p:480,c:'Mains',d:'Soy, vinegar and garlic, braised until tender.',k:'#FDAF97'},
+{n:'Lechon Kawali',e:'🥓',p:650,c:'Mains',d:'Crispy fried pork belly with liver sauce.',k:'#FEE1A1'},
+{n:'Kare-Kare',e:'🍲',p:780,c:'Mains',d:'Oxtail and vegetables in peanut sauce.',k:'#7F9BC0'},
+{n:'Beef Caldereta',e:'🥘',p:720,c:'Mains',d:'Tomato stew with beef, potato and olives.',k:'#FDAF97'},
+{n:'Sinigang na Baboy',e:'🍜',p:560,c:'Mains',d:'Sour tamarind soup with pork and greens.',k:'#7F9BC0'},
+{n:'Pancit Bihon',e:'🍝',p:420,c:'Noodles and rice',d:'Rice noodles with chicken and vegetables.',k:'#FEE1A1'},
+{n:'Pancit Canton',e:'🍜',p:440,c:'Noodles and rice',d:'Egg noodles for long life and good luck.',k:'#FDAF97'},
+{n:'Garlic Fried Rice',e:'🍚',p:350,c:'Noodles and rice',d:'Day-old rice fried with toasted garlic.',k:'#7F9BC0'},
+{n:'Lumpiang Shanghai',e:'🥟',p:380,c:'Sides',d:'Crisp pork spring rolls with sweet chili.',k:'#FEE1A1'},
+{n:'Ensaladang Talong',e:'🍆',p:300,c:'Sides',d:'Grilled eggplant, tomato and onion.',k:'#7F9BC0'},
+{n:'Leche Flan',e:'🍮',p:350,c:'Desserts',d:'Silky caramel custard, steamed slowly.',k:'#FDAF97'},
+{n:'Buko Pandan',e:'🥥',p:320,c:'Desserts',d:'Young coconut and pandan jelly in cream.',k:'#FEE1A1'},
+{n:'Halo-Halo',e:'🍧',p:90,c:'Desserts',d:'Shaved ice with sweet beans and fruit, per cup.',k:'#7F9BC0'}];
+const pk=[
+{n:'Simple Salo',p:350,i:['3 main dishes','Rice and 1 side','Dessert','Buffet setup']},
+{n:'Fiesta',p:550,i:['4 main dishes','Rice and 2 sides','Pancit','2 desserts','Buffet setup and servers'],best:1},
+{n:'Grand Celebration',p:850,i:['5 main dishes','Rice, pancit and 3 sides','Dessert station','Table styling','Full service staff']}];
+const card=d=>`<div class="card"><div class="pic" style="--c:${d.k}" aria-hidden="true">${d.e}</div><h3>${d.n}</h3><p>${d.d}</p><span class="price">${peso(d.p)}</span></div>`;
+const pkcard=(x,full)=>`<div class="card pkg ${x.best?'best':''}"><h3>${x.n}</h3><span class="price">${peso(x.p)} per guest</span>${full?`<ul>${x.i.map(i=>`<li>${i}</li>`).join('')}</ul>`:'<div style="flex:1"></div>'}<a class="btn" href="#customize" data-pkg="${x.p}">Select</a></div>`;
+document.getElementById('featured').innerHTML=[0,1,2,10].map(i=>card(dishes[i])).join('');
+document.getElementById('homepkgs').innerHTML=pk.map(x=>pkcard(x,false)).join('');
+document.getElementById('pkgs').innerHTML=pk.map(x=>pkcard(x,true)).join('');
+const cats=['All',...new Set(dishes.map(d=>d.c))];
+const tabs=document.getElementById('tabs');
+function showCat(c){tabs.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.textContent===c));
+document.getElementById('menugrid').innerHTML=dishes.filter(d=>c==='All'||d.c===c).map(card).join('')}
+tabs.innerHTML=cats.map(c=>`<button>${c}</button>`).join('');
+tabs.onclick=e=>{if(e.target.tagName==='BUTTON')showCat(e.target.textContent)};showCat('All');
+document.getElementById('dishes').innerHTML=dishes.filter(d=>d.c!=='Desserts'||d.n!=='Halo-Halo').map(d=>`<label class="opt"><input type="checkbox" class="dish" value="${d.n}"> ${d.n}</label>`).join('');
+const $=id=>document.getElementById(id);let summary='';
+function calc(){
+const g=Math.max(0,+$('guests').value||0),base=+$('pkg').value,svc=+document.querySelector('[name=svc]:checked').value;
+const sel=[...document.querySelectorAll('.dish:checked')];
+const per=(base||250+45*sel.length)+svc;
+const adds=[...document.querySelectorAll('.add:checked')];
+const addT=adds.reduce((s,a)=>s+ +a.value,0),total=per*g+addT;
+const pname=base?$('pkg').selectedOptions[0].text.split(' (')[0]:`Custom menu (${sel.length} dishes)`;
+const L=[[`${$('etype').value}, ${g} guests`,''],[pname,peso(base||250+45*sel.length)+'/guest'],[svc?'Service upgrade':'Buffet',svc?'+'+peso(svc)+'/guest':'Included'],...adds.map(a=>[a.dataset.n,peso(a.value)])];
+$('lines').innerHTML=L.map(l=>`<li><span>${l[0]}</span><span>${l[1]}</span></li>`).join('');
+$('total').textContent=peso(total);
+summary=`Event: ${$('etype').value}\nGuests: ${g}\nDate: ${$('edate').value||'not set'}\nVenue: ${$('venue').value||'not set'}\nPackage: ${pname}\nDishes: ${sel.map(s=>s.value).join(', ')||'per package'}\nAdd-ons: ${adds.map(a=>a.dataset.n).join(', ')||'none'}\nNotes: ${$('notes').value||'none'}\nEstimate: ${peso(total)}`}
+document.querySelector('#customize').addEventListener('input',calc);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-pkg]');if(a){$('pkg').value=a.dataset.pkg;calc()}});
+$('cont').addEventListener('click',()=>{calc();$('bs').value=summary;$('bg').value=$('guests').value;$('bd').value=$('edate').value});
+$('form').addEventListener('submit',e=>{e.preventDefault();
+if(!$('bn').value.trim()||!/\S+@\S+\.\S+/.test($('be').value)){alert('Please enter your name and a valid email so we can reply.');return}
+$('ok').style.display='block'});
+const pages=['home','about','menu','packages','customize','booking'];
+function route(){let h=location.hash.slice(1);if(!pages.includes(h))h='home';
+pages.forEach(p=>$(p).classList.toggle('show',p===h));
+document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();calc();
+</script>
+</body>
+</html>
